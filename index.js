@@ -17,7 +17,7 @@ const db_data = process.env.DB_DATA;
 Connection(db_url, db_user, db_pass, db_data);
 
 const rotasBackFlip = require('./routers/app.route');
-app.use('/flipanuncios', rotasBackFlip);
+app.use('/anuncios', rotasBackFlip);
 
 const port = 3000;
 app.listen(process.env.PORT || port, () => {
