@@ -7,7 +7,7 @@ router.get('/', flipController.getAnuncio);
 
 router.get('/:id', flipController.getAnuncioById);
 
-router.get('/:suites', flipController.getAnuncioBySuite);
+router.get('/findbysuite/:suites', flipController.getAnuncioBySuite);
 
 router.post('/add', flipController.createAnuncio);
 

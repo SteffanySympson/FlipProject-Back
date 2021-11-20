@@ -5,9 +5,9 @@ class FlipService{
 
     findById = async (id) => await FlipAnuncios.findById(id);
 
-    findBySuite = async (suites, anuncio) => {
-        return await FlipAnuncios.findAll({suites: suites}, anuncio);
-    };
+    findBySuite = async (suites) => {
+        return await FlipAnuncios.find({ suites: +suites });
+    }
 
     createAnuncio = async (anuncio) => {
         return await FlipAnuncios.create(anuncio);
