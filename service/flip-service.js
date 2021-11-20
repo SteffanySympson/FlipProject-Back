@@ -5,15 +5,19 @@ class FlipService{
 
     findById = async (id) => await FlipAnuncios.findById(id);
 
-    createTarefa = async (tarefa) => {
+    findBySuite = async (suites, anuncio) => {
+        return await FlipAnuncios.findAll({suites: suites}, anuncio);
+    };
+
+    createAnuncio = async (anuncio) => {
         return await FlipAnuncios.create(anuncio);
     }
 
-    putTarefa = async(id, tarefa) => {
+    putAnuncio = async(id, anuncio) => {
         return await FlipAnuncios.updateOne({_id: id}, anuncio);
     }
 
-    delTarefa = async (id) =>{
+    delAnuncio = async (id) =>{
         return await FlipAnuncios.deleteOne({_id: id});
     }
 }

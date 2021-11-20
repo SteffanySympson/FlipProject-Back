@@ -26,6 +26,23 @@ class FlipController{
         res.status(200).send(anuncio);
     }
 
+    getAnuncioBySuite = async (req, res) => {
+        const suite = req.params.suites;
+        // if(!mongoose.Types.Map.isValid(suite)) {
+        //     res.status(403).send({message: 'Nº de suítes inválido!!'});
+        //     return;
+        // }
+
+        const anuncio = await flipService.findAll(suite);
+
+        if(!anuncio) {
+            res.status(404).send({message:'Anuncio não encontrado!!'});
+            return;
+        }
+
+        res.status(200).send(anuncio); 
+    }
+
     createAnuncio = async (req, res) => {
         const anuncio = req.body;
         const anuncioSave = await flipService.createAnuncio(anuncio);
