@@ -26,14 +26,14 @@ class FlipController{
         res.status(200).send(anuncio);
     }
 
-    getAnuncioBySuite = async (req, res) => {
-        const suites = req.params.suites;
+    getAnuncioByQuartos = async (req, res) => {
+        const quartos = req.params.quartos;
         // if(!mongoose.Types.Map.isValid(suite)) {
         //     res.status(403).send({message: 'Nº de suítes inválido!!'});
         //     return;
         // }
 
-        const anuncio = await flipService.findBySuite(suites)
+        const anuncio = await flipService.findByQuartos(quartos)
 
         if(!anuncio) {
             res.status(404).send({message:'Anuncio não encontrado!!'});
